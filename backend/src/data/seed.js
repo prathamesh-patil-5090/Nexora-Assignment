@@ -15,7 +15,7 @@ const products = [
         description: 'Classic blue denim jeans',
         price: 49.99,
         unit: 'piece',
-        image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&fit=crop'
+        image: 'https://www.tenuejeans.com/cdn/shop/files/JACKSONRENO_0051.jpg?v=1746526707&width=1024'
     },
     {
         name: 'Running Shoes',
@@ -36,7 +36,7 @@ const products = [
         description: 'Warm wool scarf',
         price: 24.99,
         unit: 'piece',
-        image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&fit=crop'
+        image: 'https://www.vishalmegamart.com/dw/image/v2/BGHT_PRD/on/demandware.static/-/Sites-vmm-gm-master-catalog/default/dweea60666/images/large/1240021310.jpg?sw=900&sh=900'
     },
     {
         name: 'Sunglasses',
@@ -50,14 +50,14 @@ const products = [
         description: 'Adjustable baseball cap',
         price: 19.99,
         unit: 'piece',
-        image: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&fit=crop'
+        image: 'https://neweracap.in/cdn/shop/files/60759071_2.jpg?v=1755870381&width=1920'
     },
     {
         name: 'Wrist Watch',
         description: 'Elegant wrist watch',
         price: 89.99,
         unit: 'piece',
-        image: 'https://images.unsplash.com/photo-1524592094714-0f25c5027c3c?w=400&fit=crop'
+        image: 'https://sc04.alicdn.com/kf/H2ffac781db5a45fd898a81dc687da440O.jpg'
     }
 ]
 

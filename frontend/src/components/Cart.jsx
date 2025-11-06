@@ -118,42 +118,6 @@ export default function Cart({ cart, onRemove, onUpdateQuantity, onCheckout }) {
               Checkout
             </h2>
             <form onSubmit={handleCheckout} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={customerInfo.name}
-                  onChange={(e) =>
-                    setCustomerInfo({ ...customerInfo, name: e.target.value })
-                  }
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={customerInfo.email}
-                  onChange={(e) =>
-                    setCustomerInfo({ ...customerInfo, email: e.target.value })
-                  }
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                />
-              </div>
               <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg space-y-2">
                 <p className="text-gray-700 dark:text-gray-300">
                   Total Items: {cart.items.length}

@@ -1,21 +1,18 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 
 export const api = {
-    // Get all products
     async getProducts(page = 1, limit = 10) {
         const response = await fetch(`${API_BASE_URL}/api/products?page=${page}&limit=${limit}`)
         if (!response.ok) throw new Error('Failed to fetch products')
         return response.json()
     },
 
-    // Get cart items
     async getCart() {
         const response = await fetch(`${API_BASE_URL}/api/cart`)
         if (!response.ok) throw new Error('Failed to fetch cart')
         return response.json()
     },
 
-    // Add item to cart
     async addToCart(productId, quantity) {
         const response = await fetch(`${API_BASE_URL}/api/cart`, {
             method: 'POST',
@@ -31,7 +28,6 @@ export const api = {
         return response.json()
     },
 
-    // Remove item from cart
     async removeFromCart(productId) {
         const response = await fetch(`${API_BASE_URL}/api/cart/${productId}`, {
             method: 'DELETE',
@@ -40,7 +36,6 @@ export const api = {
         return response.json()
     },
 
-    // Checkout
     async checkout(cartItems) {
         const response = await fetch(`${API_BASE_URL}/api/cart/checkout`, {
             method: 'POST',

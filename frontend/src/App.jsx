@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
 import ReceiptModal from "./components/ReceiptModal";
-import { Link } from "react-router-dom";
 import { api } from "./services/api";
 import "./App.css";
 
@@ -12,7 +13,6 @@ function App() {
   const [receipt, setReceipt] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showCart, setShowCart] = useState(false);
-  const [notification, setNotification] = useState("");
 
   useEffect(() => {
     loadProducts();
@@ -43,9 +43,9 @@ function App() {
     try {
       await api.addToCart(productId, quantity);
       await loadCart();
-      showNotification("Item added to cart!");
+      toast.success("Item added to cart!");
     } catch (error) {
-      showNotification(error.message, true);
+      toast.error(error.message);
     }
   };
 
@@ -53,9 +53,9 @@ function App() {
     try {
       await api.removeFromCart(productId);
       await loadCart();
-      showNotification("Item removed from cart");
+      toast.success("Item removed from cart");
     } catch (error) {
-      showNotification(error.message, true);
+      toast.error(error.message);
     }
   };
 
@@ -66,7 +66,7 @@ function App() {
       await api.addToCart(productId, newQuantity);
       await loadCart();
     } catch (error) {
-      showNotification(error.message, true);
+      toast.error(error.message);
     }
   };
 
@@ -75,16 +75,11 @@ function App() {
       const result = await api.checkout(cart.items);
       setReceipt(result.receipt);
       await loadCart();
-      showNotification("Order placed successfully!");
+      toast.success("Order placed successfully!");
     } catch (error) {
-      showNotification(error.message, true);
+      toast.error(error.message);
       throw error;
     }
-  };
-
-  const showNotification = (message, isError = false) => {
-    setNotification({ message, isError });
-    setTimeout(() => setNotification(""), 3000);
   };
 
   if (loading) {
@@ -99,18 +94,19 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Notification */}
-      {notification && (
-        <div
-          className={`fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg ${
-            notification.isError
-              ? "bg-red-500 text-white"
-              : "bg-green-500 text-white"
-          }`}
-        >
-          {notification.message}
-        </div>
-      )}
+      {/* Toast Container */}
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
 
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40">

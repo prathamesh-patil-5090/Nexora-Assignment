@@ -83,7 +83,18 @@ This guide provides instructions for testing the Nexora E-Commerce Cart APIs usi
   ```json
   {
     "message": "Item added to cart",
-    "cart": { ... }
+    "cart": {
+      "id": "string",
+      "userId": "string",
+      "items": [
+        {
+          "productId": "string",
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-11-06T00:00:00.000Z",
+      "updatedAt": "2025-11-06T00:00:00.000Z"
+    }
   }
   ```
 - **Example**: POST `http://localhost:3000/api/cart` with body `{"productId": "some-id", "quantity": 2}`
@@ -123,7 +134,12 @@ This guide provides instructions for testing the Nexora E-Commerce Cart APIs usi
   ```bash
   curl -X DELETE "http://localhost:3000/api/cart/some-product-id"
   ```
-- **Response**: 204 No Content
+- **Response**: 200 OK
+  ```json
+  {
+    "message": "Item removed from cart"
+  }
+  ```
 - **Example**: DELETE `http://localhost:3000/api/cart/some-product-id`
 
 ### 5. Checkout
@@ -156,7 +172,15 @@ This guide provides instructions for testing the Nexora E-Commerce Cart APIs usi
       "orderId": "string",
       "total": 0.0,
       "timestamp": "2025-11-06T00:00:00.000Z",
-      "items": [ ... ]
+      "items": [
+        {
+          "productId": "string",
+          "quantity": 1,
+          "price": 0.0,
+          "name": "string",
+          "unit": "string"
+        }
+      ]
     }
   }
   ```

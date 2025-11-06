@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+    "build": "prisma generate",
+    "postinstall": "prisma generate",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio",

@@ -6,17 +6,20 @@ A modern, full-stack e-commerce shopping application built with React, Node.js, 
 
 ### Products Page
 
-![Products Page](./screenshots/products.png)
+<img width="1917" height="981" alt="image" src="https://github.com/user-attachments/assets/fd8ef010-b8a8-4482-b9ff-25299db7cd7f" />
+
 _Browse through our collection of products with an intuitive and modern interface_
 
 ### Shopping Cart
 
-![Shopping Cart](./screenshots/cart.png)
+<img width="1919" height="976" alt="image" src="https://github.com/user-attachments/assets/304d135f-b480-4dd2-8233-63208eae1619" />
+
 _Manage your cart items with easy quantity adjustments and real-time total calculations_
 
 ### Order Success
 
-![Order Success](./screenshots/order-success.png)
+<img width="1919" height="980" alt="image" src="https://github.com/user-attachments/assets/8ac071a8-095c-4b55-a31f-0e2b6939aa44" />
+
 _Confirmation page with detailed order information and receipt_
 
 ## 🎬 Video Demo & Explanation

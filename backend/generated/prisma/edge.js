@@ -147,7 +147,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/prathamesh/VS_CODE/Nexora-Assignment/backend/generated/prisma",
+      "value": "D:\\Nexora-Assignment\\backend\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -156,16 +156,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/prathamesh/VS_CODE/Nexora-Assignment/backend/prisma/schema.prisma",
+    "sourceFilePath": "D:\\Nexora-Assignment\\backend\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
+    "rootEnvPath": "../../.env",
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../prisma",
@@ -175,6 +175,7 @@ const config = {
     "db"
   ],
   "activeProvider": "mongodb",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
